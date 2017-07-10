@@ -16,7 +16,7 @@ A prova possui um critério mínimo de requisitos que devem ser entregue, que s�
  - Categorizar Tarefas
  - Adicionar uma Data na Tarefa
 
-A partir do momento que foi atigindo o critério mínimo o candidato tem direito de submeter a prova, porém caso o candidato queira adicionar funcionalidades, modificações em questões de layout, arquitetura da aplicação.
+A partir do momento que foi atigindo o critério mínimo o candidato tem direito de submeter a prova, porém caso o candidato queira adicionar funcionalidades, modificações em questões de layout, arquitetura da aplicação etc, isso será avaliado também.
 
 # Itens Adicionais
 
