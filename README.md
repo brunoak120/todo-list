@@ -32,7 +32,7 @@ Caso o candidato utilize algum dos itens a seguir conseguirá pontos adicionais 
 
 A prova terá duração de 48 horas, resaltando que o avaliado tem o direito de entregar a qualquer momento o código contando que esteja no tempo hábil da prova.
 
-# Passos entregar a Prova
+# Passos para entregar a Prova
 
  - Criar um fork do repositorio
  - adicionar o código no repositorio forkeado
