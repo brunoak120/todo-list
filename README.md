@@ -8,6 +8,25 @@ A aplicação que será desenvolvida é um sistema de lista de afazeres (Todo-Li
 
 A tarefa deverá conter um título, um corpo de texto, uma categoria, uma data inicio e fim, ambas opcionais.
 
+# Método de Avaliação
+
+A prova possui um critério mínimo de requisitos que devem ser entregue, que são:
+
+ - Capacidade de criar Tarefas
+ - Categorizar Tarefas
+ - Adicionar uma Data na Tarefa
+
+A partir do momento que foi atigindo o critério mínimo o candidato tem direito de submeter a prova, porém caso o candidato queira adicionar funcionalidades, modificações em questões de layout, arquitetura da aplicação.
+
+# Itens Adicionais
+
+Caso o candidato utilize algum dos itens a seguir conseguirá pontos adicionais na prova:
+
+ - Utilização de Framework PHP
+ - Utilização de Framework Javascript
+ - Utilização de Padrões de Projetos
+ - Utilização de Testes Automatizados
+
 
 # Duração da Prova
 
