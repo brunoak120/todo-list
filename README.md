@@ -6,7 +6,7 @@ Esta Prova consiste em desenvolver uma aplicação WEB feita na linguagem PHP pa
 
 A aplicação que será desenvolvida é um sistema de lista de afazeres (Todo-List). Aonde o usuário poderá adicionar tarefas na lista, categorizar as tarefas, adicionar lembretes, Data da Tarefa.
 
-A tarefa deverá conter um título, um corpo de texto, uma categoria, uma data inicio e fim, ambas opcionais.
+A tarefa deverá conter um título, um corpo de texto, uma categoria, uma data inicio e fim (opcional).
 
 # Método de Avaliação
 
@@ -30,7 +30,7 @@ Caso o candidato utilize algum dos itens a seguir conseguirá pontos adicionais 
 
 # Duração da Prova
 
-A prova terá duração de 48 horas, resaltando que o avaliado tem o direito de entregar a qualquer momento o código contando que esteja no tempo hábil da prova.
+A prova terá duração determinada pelo período em que o candidato terá acesso ao repositório da prova. O envio é exclusivo pelo GitLab e deve ser durante o período da prova, resaltando que o avaliado tem o direito de entregar a qualquer momento o código contando que esteja no tempo hábil da prova.
 
 # Passos para entregar a Prova
 
