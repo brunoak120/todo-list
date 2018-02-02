@@ -22,15 +22,15 @@ A partir do momento que foi atigindo o critério mínimo o candidato tem direito
 
 Caso o candidato utilize algum dos itens a seguir conseguirá pontos adicionais na prova:
 
- - Utilização de Framework PHP
- - Utilização de Framework Javascript
+ - Utilização de Framework PHP Laravel
+ - Utilização de Framework Javascript Vuejs
  - Utilização de Padrões de Projetos
  - Utilização de Testes Automatizados
 
 
 # Duração da Prova
 
-A prova terá duração determinada pelo período em que o candidato terá acesso ao repositório da prova. O envio é exclusivo pelo GitLab e deve ser durante o período da prova, resaltando que o avaliado tem o direito de entregar a qualquer momento o código contando que esteja no tempo hábil da prova.
+A prova terá duração determinada pelo período em que o candidato terá acesso ao repositório da prova. O envio é exclusivo pelo Github e deve ser durante o período da prova, resaltando que o avaliado tem o direito de entregar a qualquer momento o código contando que esteja no tempo hábil da prova.
 
 # Passos para entregar a Prova
 
