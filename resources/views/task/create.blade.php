@@ -44,13 +44,13 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="content">Data inicial</label>
-                                        {!! Form::text('started',null,['class' => 'calendar form-control', 'placeholder' => 'Data inicial', 'required']) !!}
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="content">Data final</label>
-                                        {!! Form::text('stopped',null,['class' => 'calendar form-control', 'placeholder' => 'Data inicial', 'required']) !!}
+                                    <div class="col-md-12">
+                                        <label for="started">Intervalo de datas</label>
+                                        <div class="input-group input-daterange">
+                                            {!! Form::text('started',null,['class' => 'calendar form-control', 'placeholder' => 'Data inicial', 'required']) !!}
+                                            <div class="input-group-addon">até</div>
+                                            {!! Form::text('stopped',null,['class' => 'calendar form-control', 'placeholder' => 'Data inicial', 'required']) !!}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">

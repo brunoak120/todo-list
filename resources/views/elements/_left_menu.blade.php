@@ -5,6 +5,7 @@
                 <div class="panel-heading" align="center">Menu</div>
                 <div class="panel-body">
                     <ul class="nav nav-sidebar">
+                        <li><a href="{{ route('task.index') }}">Gerenciar Tarefas</a></li>
                         <li><a href="{{ route('category.index') }}">Listar Categorias</a></li>
                         <li><a href="{{ route('category.create') }}">Adicionar Categorias</a></li>
                         <li><a href="{{ route('task.create') }}">Adicionar Tarefa</a></li>
@@ -14,5 +15,5 @@
                 </div>
             </div>
         </div>
-        </div>
-    </nav>
+    </div>
+</nav>

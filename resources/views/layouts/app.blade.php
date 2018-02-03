@@ -30,8 +30,9 @@
 </div>
 
 <!-- Scripts -->
-{!! Html::script('js/bootstrap.min.js') !!}
 {!! Html::script('js/jquery-3.3.1.min.js') !!}
+{!! Html::script('js/bootstrap.min.js') !!}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" />
 {!! Html::script('https://unpkg.com/sweetalert/dist/sweetalert.min.js') !!}
 {!! Html::script('js/app.js') !!}
 @stack('scripts')

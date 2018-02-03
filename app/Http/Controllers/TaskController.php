@@ -21,7 +21,6 @@ class TaskController extends Controller
      */
     public function __construct(TaskRepository $taskRepository, CategoryRepository $categoryRepository)
     {
-        $this->middleware('auth');
         $this->taskRepository = $taskRepository;
         $this->categoryRepository = $categoryRepository;
     }
@@ -31,7 +30,9 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view('task.index');
+        $tasks = $this->taskRepository->getTasks();
+
+        return view('task.index', compact('tasks'));
     }
 
     public function create()

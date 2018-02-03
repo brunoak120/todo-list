@@ -5,3 +5,9 @@ $(document).ready(function () {
         autoclose: true
     });
 });
+
+
+$('.input-daterange').datepicker({
+    format: 'dd/mm/yyyy',
+    language: 'pt-BR'
+});

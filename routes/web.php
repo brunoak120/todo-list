@@ -33,5 +33,6 @@ Route::group(['middleware' => 'auth'], function () {
     //TASKS
     Route::get('/adicionar-tarefa', 'TaskController@create')->name('task.create');
     Route::post('/adicionar-tarefa', 'TaskController@store')->name('task.store');
+    Route::get('/gerenciar-tarefa', 'TaskController@index')->name('task.index');
 
 });

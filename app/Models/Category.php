@@ -26,4 +26,12 @@ class Category extends Model implements Transformable
         'name'
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tasks()
+    {
+        return $this->belongsToMany(Task::class);
+    }
+
 }

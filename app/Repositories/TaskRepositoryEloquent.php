@@ -3,9 +3,9 @@
 namespace App\Repositories;
 
 use App\Criteria\FilterByUserCriteria;
-use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
 use App\Models\Task;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class TaskRepositoryEloquent.
@@ -24,8 +24,6 @@ class TaskRepositoryEloquent extends BaseRepository implements TaskRepository
         return Task::class;
     }
 
-    
-
     /**
      * Boot up the repository, pushing criteria
      */
@@ -34,5 +32,19 @@ class TaskRepositoryEloquent extends BaseRepository implements TaskRepository
         $this->pushCriteria(app(RequestCriteria::class));
         $this->pushCriteria(FilterByUserCriteria::class);
     }
-    
+
+    /**
+     * @return mixed
+     */
+    public function getTasks()
+    {
+        $result = $this->scopeQuery(function ($query) {
+            return $query->select('tasks.id', 'tasks.category_id', 'categories.user_id','tasks.title', 'tasks.content',
+                'tasks.started', 'tasks.stopped', 'categories.name')
+                ->leftJoin('categories', 'tasks.category_id', 'categories.id');
+        })->all();
+
+        return $result;
+    }
+
 }

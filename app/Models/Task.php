@@ -30,24 +30,44 @@ class Task extends Model implements Transformable
         'stopped'
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function category()
+    {
+        return $this->hasOne(Category::class);
+    }
+
+    /**
+     * @param $started
+     */
     public function setStartedAttribute($started)
     {
         $started = Carbon::createFromFormat('d/m/Y', $started);
         $this->attributes['started'] = $started->format('Y-m-d');
     }
 
+    /**
+     * @return string
+     */
     public function getStartedAttribute()
     {
         $started = Carbon::createFromFormat('Y-m-d', $this->attributes['started']);
         return $started->format('d/m/Y');
     }
 
+    /**
+     * @param $stopped
+     */
     public function setStoppedAttribute($stopped)
     {
         $stopped = Carbon::createFromFormat('d/m/Y', $stopped);
         $this->attributes['stopped'] = $stopped->format('Y-m-d');
     }
 
+    /**
+     * @return string
+     */
     public function getStoppedAttribute()
     {
         $stopped = Carbon::createFromFormat('Y-m-d', $this->attributes['stopped']);
