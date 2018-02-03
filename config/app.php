@@ -178,7 +178,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        App\Providers\RepositoryServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
