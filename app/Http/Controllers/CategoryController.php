@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    /** @var */
+    /** @var CategoryRepository  */
     protected $categoryRepository;
 
     /**
+     * CategoryController constructor.
      * @param CategoryRepository $categoryRepository
      */
     public function __construct(CategoryRepository $categoryRepository)
@@ -24,7 +25,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = $this->categoryRepository->findWhere(['user_id' => auth()->user()->id]);
+        $categories = $this->categoryRepository->all();
 
         return view('category.index', compact('categories'));
     }
@@ -48,14 +49,6 @@ class CategoryController extends Controller
 
         flash('Categoria "' . $request->name . '" adicionada com sucesso')->success();
         return redirect()->back();
-    }
-
-    /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function edit()
-    {
-        return view('category.edit');
     }
 
     /**
@@ -86,8 +79,6 @@ class CategoryController extends Controller
     {
         try {
             $removed = $this->categoryRepository->delete($request->id);
-
-            dd($removed);
 
             return response()->json($removed);
         } catch (\Exception $e) {

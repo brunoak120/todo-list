@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Criteria\FilterByUserCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Models\Category;
@@ -31,6 +32,16 @@ class CategoryRepositoryEloquent extends BaseRepository implements CategoryRepos
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
+        $this->pushCriteria(FilterByUserCriteria::class);
+    }
+
+    public function getArrayCategoriesOrderlyByName()
+    {
+        $result = $this->scopeQuery(function ($query){
+           return $query->orderBy('name');
+        })->all()->pluck('name', 'id');
+
+        return $result;
     }
     
 }

@@ -24,7 +24,7 @@ class CreateTasksTable extends Migration
             $table->string('title');
             $table->longText('content');
             $table->dateTime('started');
-            $table->dateTime('stoped');
+            $table->dateTime('stopped');
 
             $table->softDeletes();
             $table->timestamps();

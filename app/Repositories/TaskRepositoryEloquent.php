@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Criteria\FilterByUserCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use App\Models\Task;
@@ -31,6 +32,7 @@ class TaskRepositoryEloquent extends BaseRepository implements TaskRepository
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
+        $this->pushCriteria(FilterByUserCriteria::class);
     }
     
 }

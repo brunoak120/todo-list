@@ -21,11 +21,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
 
+    //CATEGORIES
     Route::get('/listar-categorias', 'CategoryController@index')->name('category.index');
     Route::get('/adicionar-categoria', 'CategoryController@create')->name('category.create');
     Route::post('/adicionar-categoria', 'CategoryController@store')->name('category.store');
     Route::get('/editar-categorias', 'CategoryController@edit')->name('category.edit');
     Route::post('/editar-categoria', 'CategoryController@update')->name('category.update');
     Route::delete('/remove-categoria', 'CategoryController@destroy')->name('category.destroy');
+
+
+    //TASKS
+    Route::get('/adicionar-tarefa', 'TaskController@create')->name('task.create');
+    Route::post('/adicionar-tarefa', 'TaskController@store')->name('task.store');
 
 });

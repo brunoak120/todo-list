@@ -8,3 +8,11 @@
 .background_color{
 
 }
+
+.text-area{
+    height: 100px !important;
+}
+
+.btn{
+    margin-top: 10px;
+}

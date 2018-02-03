@@ -30,8 +30,8 @@
 </div>
 
 <!-- Scripts -->
-{!! Html::script('js/jquery-3.3.1.min.js') !!}
 {!! Html::script('js/bootstrap.min.js') !!}
+{!! Html::script('js/jquery-3.3.1.min.js') !!}
 {!! Html::script('https://unpkg.com/sweetalert/dist/sweetalert.min.js') !!}
 {!! Html::script('js/app.js') !!}
 @stack('scripts')

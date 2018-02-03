@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Prettus\Repository\Contracts\Transformable;
@@ -26,7 +27,30 @@ class Task extends Model implements Transformable
         'title',
         'content',
         'started',
-        'stoped'
+        'stopped'
     ];
 
+    public function setStartedAttribute($started)
+    {
+        $started = Carbon::createFromFormat('d/m/Y', $started);
+        $this->attributes['started'] = $started->format('Y-m-d');
+    }
+
+    public function getStartedAttribute()
+    {
+        $started = Carbon::createFromFormat('Y-m-d', $this->attributes['started']);
+        return $started->format('d/m/Y');
+    }
+
+    public function setStoppedAttribute($stopped)
+    {
+        $stopped = Carbon::createFromFormat('d/m/Y', $stopped);
+        $this->attributes['stopped'] = $stopped->format('Y-m-d');
+    }
+
+    public function getStoppedAttribute()
+    {
+        $stopped = Carbon::createFromFormat('Y-m-d', $this->attributes['stopped']);
+        return $stopped->format('d/m/Y');
+    }
 }

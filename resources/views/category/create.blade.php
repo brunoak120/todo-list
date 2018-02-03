@@ -14,15 +14,19 @@
                         <div class="row">
                             <div class="col-md-12">
                                 {!! Form::open(['route' => ['category.store'], 'method' => 'post']) !!}
-                                <section>
-                                    <label for="name">Categoria</label>
-                                    {!! Form::text('name',null,['class' => 'form-control', 'placeholder' => 'Nome da categoria', 'autofocus', 'required']) !!}
-                                </section>
-                                <section>
-                                    <button type="submit" class="btn btn-primary">
-                                        Salvar
-                                    </button>
-                                </section>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="name">Categoria</label>
+                                        {!! Form::text('name',null,['class' => 'form-control', 'placeholder' => 'Nome da categoria', 'autofocus', 'required']) !!}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary">
+                                            Salvar
+                                        </button>
+                                    </div>
+                                </div>
                                 {!! Form::close() !!}
                             </div>
                         </div>
