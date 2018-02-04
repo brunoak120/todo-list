@@ -30,7 +30,6 @@ class CreateTasksTable extends Migration
             $table->date('stopped');
             $table->enum('status',['0','1'])->default('0');
 
-            $table->softDeletes();
             $table->timestamps();
 		});
 	}

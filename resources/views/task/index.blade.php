@@ -64,7 +64,7 @@
                                             <div class="col-md-12">
                                                 <li class="list-group-item">
                                                     <div class="row">
-                                                        <div class="col-md-9">
+                                                        <div class="col-md-10">
                                                             <div class="checkbox">
                                                                 <label>
                                                                     <input class="changeStatus raitola"
@@ -78,11 +78,7 @@
 
                                                                 </label></div>
                                                         </div>
-                                                        <div class="col-md-3">
-                                                            <a title="Editar" data-id="{{ $task->id }}"
-                                                               class="editItem btn btn-warning btn">
-                                                                <i class="glyphicon glyphicon-pencil"></i>
-                                                            </a>
+                                                        <div class="col-md-2">
                                                             <a title="Ver" data-id="{{ $task->id }}"
                                                                class="seeItem btn btn-primary btn">
                                                                 <i class="glyphicon glyphicon-search"></i>
@@ -102,31 +98,7 @@
                             </div>
                         </div>
                     </div>
-                @include('task._show_modal')
-                <!-- Modal -->
-                    <div id="editCategoryModal" class="modal fade" role="dialog">
-                        <div class="modal-dialog">
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;
-                                    </button>
-                                    <h4 class="modal-title">Editar Tarefa</h4>
-                                </div>
-                                <div class="modal-body">
-                                    {!! Form::text('title',null,['class' => 'form-control', 'placeholder' => 'Nome da categoria', 'required', 'id' => 'name']) !!}
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="submit" class="updateItem btn btn-primary" data-dismiss="modal">
-                                        Salvar
-                                    </button>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                                        Cancelar
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('task._show_modal')
                 </div>
             </div>
         </div>

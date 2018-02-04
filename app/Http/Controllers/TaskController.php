@@ -60,12 +60,12 @@ class TaskController extends Controller
         flash('Tarefa adicionada com sucesso.')->success();
         return redirect()->back();
     }
-
+    
     public function show(Request $request)
     {
         try {
             $task = $request->id;
-            $shown = $this->taskRepository->findWhere(['id' => $task])->first();
+            $shown = $this->taskRepository->getTaskById($task);
 
             if (!empty($shown->title)) {
                 return response()->json($shown);

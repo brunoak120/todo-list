@@ -144,13 +144,14 @@ $(document).on("click", ".seeItem", function () {
         if (data === false) {
             swal("Não foi possivel encontrar tarefa.", "", "error");
         } else {
-            console.log(data);
+            var status = data.status == 0 ? 'Pendente' : 'Relizada';
             $('#showTaskModal').modal('show');
-            $('#title').val(data.title);
-            $('#content').val(data.content);
+            $('#seeTitle').val(data.title);
+            $('#seeContent').val(data.content);
             $('#seeStarted').val(data.started);
             $('#seeStopped').val(data.stopped);
-            $('#status').val(data.status);
+            $('#seeStatus').val(status);
+            $('#seeName').val(data.name);
         }
     });
 
@@ -160,6 +161,9 @@ $(document).on("click", ".seeItem", function () {
     })
 });
 
+/**
+ * @description
+ */
 $(document).on("click", ".filterFields", function () {
     started = $("#started").val();
     stopped = $("#stopped").val();
@@ -196,7 +200,7 @@ $(document).on("click", ".filterFields", function () {
                     '   <div class="col-md-12">\n' +
                     '       <li class="list-group-item">\n' +
                     '           <div class="row">\n' +
-                    '               <div class="col-md-9">\n' +
+                    '               <div class="col-md-10">\n' +
                     '                   <div class="checkbox">' +
                     '                       <label>' +
                     '                           <input class="changeStatus raitola"' +
@@ -206,11 +210,7 @@ $(document).on("click", ".filterFields", function () {
                     '                           type="checkbox">' + data[index].title + '' +
                     '                       </label></div>' +
                     '           </div>' +
-                    '           <div class="col-md-3">\n' +
-                    '               <a title="Editar" data-id="' + data[index].id + '"\n' +
-                    '                   class="editItem btn btn-warning btn">\n' +
-                    '                   <i class="glyphicon glyphicon-pencil"></i>\n' +
-                    '               </a>\n' +
+                    '           <div class="col-md-2">\n' +
                     '               <a title="Remover" data-id="' + data[index].id + '"\n' +
                     '                   class="seeItem btn btn-primary btn">\n' +
                     '                   <i class="glyphicon glyphicon-search"></i>\n' +
@@ -223,7 +223,6 @@ $(document).on("click", ".filterFields", function () {
                     '       </li>\n' +
                     '   </div>\n' +
                     '</div>');
-                console.log(data[index]);
             });
             $(".mainDiv").append('</ul>');
         }

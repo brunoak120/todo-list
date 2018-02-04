@@ -32,18 +32,15 @@ class TaskRepositoryEloquent extends BaseRepository implements TaskRepository
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
-        $this->pushCriteria(FilterByUserCriteria::class);
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTasks()
+    public function getTaskById($id)
     {
         $result = $this->scopeQuery(function ($query) {
-            return $query->select('tasks.id', 'tasks.category_id', 'categories.user_id','tasks.title', 'tasks.content',
-                'tasks.started', 'tasks.stopped', 'tasks.status' ,'categories.name');
-        })->all();
+            return $query->select('tasks.id', 'tasks.category_id','tasks.title', 'tasks.content',
+                'tasks.started', 'tasks.stopped', 'tasks.status', 'categories.name')
+                ->join('categories', 'tasks.category_id', 'categories.id');
+        })->findWhere(['tasks.user_id' => auth()->user()->id, 'tasks.id' => $id])->first();
 
         return $result;
     }

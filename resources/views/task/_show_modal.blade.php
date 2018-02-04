@@ -9,11 +9,19 @@
             </div>
             <div class="modal-body">
                 <label for="title">Titulo da tarefa</label>
-                {!! Form::text('title',null,['class' => 'form-control', 'id' => 'title', 'readonly' => 'true']) !!}
+                {!! Form::text('title',null,['class' => 'form-control', 'id' => 'seeTitle', 'readonly' => 'true']) !!}
+            </div>
+            <div class="modal-body">
+                <label for="title">Categoria da tarefa</label>
+                {!! Form::text('name',null,['class' => 'form-control', 'id' => 'seeName', 'readonly' => 'true']) !!}
             </div>
             <div class="modal-body">
                 <label for="content">Descrição da tarefa</label>
-                {!! Form::textarea('content',null,['class' => 'text-area form-control', 'id' => 'content', 'readonly' => 'true']) !!}
+                {!! Form::textarea('content',null,['class' => 'text-area form-control', 'id' => 'seeContent', 'readonly' => 'true']) !!}
+            </div>
+            <div class="modal-body">
+                <label for="title">Status da tarefa</label>
+                {!! Form::text('status',null,['class' => 'form-control', 'id' => 'seeStatus', 'readonly' => 'true']) !!}
             </div>
             <div class="modal-body">
                 <label for="started">Intervalo de datas</label>
