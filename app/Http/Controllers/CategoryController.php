@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryCreateRequest;
 use App\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 
@@ -38,10 +39,10 @@ class CategoryController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param CategoryCreateRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(CategoryCreateRequest $request)
     {
         $request->request->add(['user_id' => auth()->user()->id]);
         $this->categoryRepository->create($request->all());

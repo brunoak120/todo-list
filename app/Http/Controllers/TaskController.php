@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TaskCreateRequest;
 use App\Models\Task;
 use App\Repositories\CategoryRepository;
 use App\Repositories\TaskRepository;
@@ -51,7 +52,7 @@ class TaskController extends Controller
         return view('task.create', compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(TaskCreateRequest $request)
     {
         $request->request->add(['user_id' => auth()->user()->id]);
         $this->taskRepository->create($request->all());
