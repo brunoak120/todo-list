@@ -42,17 +42,17 @@ function removeTask(id) {
     request.done(function (data) {
         console.log(data);
         if (data === true) {
-            swal("Categoria removida com sucesso", "", "success").then(function (value) {
+            swal("Tarefa removida com sucesso", "", "success").then(function (value) {
                 location.reload();
             });
         } else {
-            swal("Não foi possivel remover a categoria", "", "error");
+            swal("Não foi possivel remover a tarefa", "", "error");
         }
     });
 
     request.fail(function (data) {
         console.error(data);
-        swal("Não foi possível remover a categoria", "", "error");
+        swal("Não foi possível remover a tarefa", "", "error");
     })
 }
 

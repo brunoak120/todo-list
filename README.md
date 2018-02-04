@@ -1,39 +1,96 @@
-# Prova de Avaliação Técnica
+#Tecnologias usadas
 
-Esta Prova consiste em desenvolver uma aplicação WEB feita na linguagem PHP para fim de avaliação Técnica no processo seletivo da Before.
+ - [Framework PHP Laravel 5.5](https://laravel.com/docs/5.5/)
+ - [Framework Bootstrap 3.3](http://getbootstrap.com/docs/3.3/)
+ - [JQuery, AJAX](http://api.jquery.com/)
+ - [SweetAlertJS](https://sweetalert.js.org/guides/#installation)
+ - [Padrão de Projeto Repository](https://github.com/andersao/l5-repository)
+ - [Plugin Flash Alert](https://github.com/laracasts/flash)
+ - [Single Element CSS Spinners](https://github.com/lukehaas/css-loaders)
 
-# Aplicação
+# Funcionalidades da aplicação
 
-A aplicação que será desenvolvida é um sistema de lista de afazeres (Todo-List). Aonde o usuário poderá adicionar tarefas na lista, categorizar as tarefas, adicionar lembretes, Data da Tarefa.
+ - CRUD das tarefas
+ - CRUD das categorias
+ - Filtro das tarefas por categoria, data inicial, data final e status
 
-A tarefa deverá conter um título, um corpo de texto, uma categoria, uma data inicio e fim (opcional).
+# Como executar este projeto
 
-# Método de Avaliação
+Para executar a aplicação será necessário seguir os passos abaixo:
 
-A prova possui um critério mínimo de requisitos que devem ser entregue, que são:
+ - Após da aplicação ser baixada, dentro do diretorio usando um bash usar o comando "composer update"
+ - Criar um novo arquivo ".env" seguindo o exemplo do arquivo ".env.example"
+ - Editar o aquivo ".env" criado colocando as informações da base de dados
+ - Criar um banco de dados com o mesmo nome que foi usado no arquivo ".env"
+ - Com a bash aberta dentro do diretorio raiz gerar as migrations com comando "php artisan migrate"
 
- - Capacidade de criar Tarefas
- - Categorizar Tarefas
- - Adicionar uma Data na Tarefa
+#Fluxo da aplicação
 
-A partir do momento que foi atigindo o critério mínimo o candidato tem direito de submeter a prova, porém caso o candidato queira adicionar funcionalidades, modificações em questões de layout, arquitetura da aplicação etc, isso será avaliado também.
+A seguir será mostrado a seguencia de passos para utilizar a aplicação.
 
-# Itens Adicionais
+##Categorias
 
-Caso o candidato utilize algum dos itens a seguir conseguirá pontos adicionais na prova:
+###Criando categorias
 
- - Utilização de Framework PHP Laravel
- - Utilização de Framework Javascript Vuejs
- - Utilização de Padrões de Projetos
- - Utilização de Testes Automatizados
+ - No menu clicar na opção "Adicionar Categoria"
+ - Nesta página preencher o campo "categoria" com o nome desejado
+ - Clicar na opção Salvar
+ - Um feedback será apresentado
+ 
+###Listando categorias
 
+ - Ao clicar na opção "Listar Categorias" no menu lateral será exibido as categorias já cadastradas 
+ com suas respectivas opções de comando.
+    
+###Removendo categorias
 
-# Duração da Prova
+ - Dentro da listagem das categorias, clicar no botão vermelho da categoria que o 
+ usuário deseja remover.
+ - Será exibido a mensagem "Você tem certeza que deseja remover essa categoria?" clique o usuário
+  deverá clicar na opção "Confirmar" para efetuar a remoção.
+ - O usuário receberá o feedback da ação
+ 
+###Editando categorias
+ - Dentro da listagem das categorias será necessário clicar no botão azul da categoria que o
+ usuário deseja editar.
+ - Será aberto um modal com um input para ser editado, assim, o usuário deverá alterar e clicar na
+ opção Salvar
+ - O usuário receberá o feedback da ação
+ 
+##Tarefas
+ Será necessário ter ao menos uma categoria para usar essa funcionalidade
 
-A prova terá duração determinada pelo período em que o candidato terá acesso ao repositório da prova. O envio é exclusivo pelo Github e deve ser durante o período da prova, resaltando que o avaliado tem o direito de entregar a qualquer momento o código contando que esteja no tempo hábil da prova.
+###Criando tarefas
 
-# Passos para entregar a Prova
+ - No menu clicar na opção "Adicionar Tarefa"
+ - Selecionar a categoria da tarefa, escrever um titulo, descrição, e datas (Caso for um dia especifico selecione apenas a data inicial. A data final será prenchida automáticamente)
+ - Clicar no botão salvar
+ - O usuário receberá um feedback da ação.
+ 
+###Listando as tarefas
 
- - Criar um fork do repositorio
- - adicionar o código no repositorio forkeado
- - fazer um pull request para o repositorio da before
+ - No menu clique na opção "Gerenciar Tarefas"
+
+###Removendo tarefas
+
+ - Dentro do menu de gerenciamento, clique no botão vermelho da tarefa que deseja remover.
+ - Será exibido uma mensagem "Você tem certeza que deseja remover essa tarefa?"
+ - Clique em confirmar para remover
+ - Uma mensagem de feedback será exibida
+ 
+###Ver tarefa
+
+ - Dentro do menu de gerenciamento, clique no botão azul
+ - Será exibido um modal com as informações da tarefa
+ 
+###Filtrar tarefas
+
+ - Dentro do menu de gerenciamento, preencha os campos desejaveis para o filtro.
+ - Será carregado as informações desejadas.
+ 
+ Obs: Nessa funcionalidade o usuário pode se sentir livre para selecionar os filtros como desejar.
+ 
+ 
+ ## License
+ 
+ The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
