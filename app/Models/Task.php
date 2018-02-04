@@ -23,11 +23,13 @@ class Task extends Model implements Transformable
      * @var array
      */
     protected $fillable = [
+        'user_id',
         'category_id',
         'title',
         'content',
         'started',
-        'stopped'
+        'stopped',
+        'status'
     ];
 
     /**
@@ -35,7 +37,7 @@ class Task extends Model implements Transformable
      */
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     /**

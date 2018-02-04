@@ -18,13 +18,17 @@ class CreateTasksTable extends Migration
 		Schema::create('tasks', function(Blueprint $table) {
             $table->increments('id');
 
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+
             $table->integer('category_id')->unsigned()->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
 
             $table->string('title');
             $table->longText('content');
-            $table->dateTime('started');
-            $table->dateTime('stopped');
+            $table->date('started');
+            $table->date('stopped');
+            $table->enum('status',['0','1'])->default('0');
 
             $table->softDeletes();
             $table->timestamps();

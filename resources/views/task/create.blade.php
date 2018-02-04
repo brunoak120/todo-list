@@ -49,7 +49,7 @@
                                         <div class="input-group input-daterange">
                                             {!! Form::text('started',null,['class' => 'calendar form-control', 'placeholder' => 'Data inicial', 'required']) !!}
                                             <div class="input-group-addon">até</div>
-                                            {!! Form::text('stopped',null,['class' => 'calendar form-control', 'placeholder' => 'Data inicial', 'required']) !!}
+                                            {!! Form::text('stopped',null,['class' => 'calendar form-control', 'placeholder' => 'Data final', 'required']) !!}
                                         </div>
                                     </div>
                                 </div>

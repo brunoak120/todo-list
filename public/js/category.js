@@ -1,3 +1,6 @@
+/** @description global category id*/
+var id;
+
 /**
  * @description remove category function
  * @param id
@@ -36,7 +39,7 @@ $(document).on("click", ".removeItem", function () {
     var id = $(this).data('id');
     swal({
         title: "Você tem certeza que deseja remover essa categoria?",
-        text: "Uma vez deletado, vocẽ não poderá recuperar essa informação!",
+        text: "Cuidado! Quando deletado a categoria, todas as tarefas relacionadas a ela também serão removidas!",
         icon: "warning",
         buttons: {
             cancel: {
@@ -62,42 +65,40 @@ $(document).on("click", ".removeItem", function () {
  * @description
  */
 $(document).on("click", ".editItem", function () {
-    var id = $(this).data('id');
+    id = $(this).data('id');
     var inputName = $(this).closest('tr').find('td[data-name]').data('name');
 
     $('#name').val(inputName);
     $('#editCategoryModal').modal('show');
+});
 
-
-    /**
-     * @description
-     */
-    $(document).on("click", ".updateItem", function () {
-        var name = $('#name').val();
-        var request = $.ajax({
-            type: "POST",
-            url: "/editar-categoria",
-            dataType: "json",
-            data: {
-                id: id,
-                name: name
-            }
-        });
-
-        request.done(function (data) {
-            console.log(data);
-            if (data == true) {
-                swal("Categoria atualizada com sucesso", "", "success").then(function (value) {
-                    location.reload();
-                });
-            } else {
-                swal("Não foi possivel atualizar a categoria", "", "error");
-            }
-        });
-
-        request.fail(function (data) {
-            console.error(data);
-            swal("Não foi possível atualizar a categoria", "", "error");
-        })
+/**
+ * @description
+ */
+$(document).on("click", ".updateItem", function () {
+    var name = $('#name').val();
+    var request = $.ajax({
+        type: "POST",
+        url: "/editar-categoria",
+        dataType: "json",
+        data: {
+            id: id,
+            name: name
+        }
     });
+
+    request.done(function (data) {
+        if (data === true) {
+            swal("Categoria atualizada com sucesso", "", "success").then(function (value) {
+                location.reload();
+            });
+        } else {
+            swal("Não foi possivel atualizar a categoria", "", "error");
+        }
+    });
+
+    request.fail(function (data) {
+        console.error(data);
+        swal("Não foi possível atualizar a categoria", "", "error");
+    })
 });

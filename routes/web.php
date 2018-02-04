@@ -34,5 +34,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/adicionar-tarefa', 'TaskController@create')->name('task.create');
     Route::post('/adicionar-tarefa', 'TaskController@store')->name('task.store');
     Route::get('/gerenciar-tarefa', 'TaskController@index')->name('task.index');
+    Route::post('/alterar-status-tarefa', 'TaskController@update')->name('task.update');
+    Route::get('/ver-tarefa', 'TaskController@show')->name('task.show');
+    Route::delete('/remove-tarefa', 'TaskController@destroy')->name('task.destroy');
 
 });

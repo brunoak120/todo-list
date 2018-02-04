@@ -5,14 +5,20 @@
     background: #98cbe8;
 }
 
-.background_color{
-
-}
-
 .text-area{
     height: 100px !important;
 }
 
 .btn{
     margin-top: 10px;
+}
+
+/*p {
+    text-decoration: line-through;
+}*/
+
+.div_teste{
+    position:absolute;
+    z-index:100;
+    right:0%;
 }

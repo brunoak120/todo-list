@@ -40,8 +40,7 @@ class TaskRepositoryEloquent extends BaseRepository implements TaskRepository
     {
         $result = $this->scopeQuery(function ($query) {
             return $query->select('tasks.id', 'tasks.category_id', 'categories.user_id','tasks.title', 'tasks.content',
-                'tasks.started', 'tasks.stopped', 'categories.name')
-                ->leftJoin('categories', 'tasks.category_id', 'categories.id');
+                'tasks.started', 'tasks.stopped', 'tasks.status' ,'categories.name');
         })->all();
 
         return $result;
