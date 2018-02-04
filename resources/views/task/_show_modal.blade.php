@@ -18,9 +18,9 @@
             <div class="modal-body">
                 <label for="started">Intervalo de datas</label>
                 <div class="input-group">
-                    {!! Form::text('started',null,['class' => 'form-control','id' => 'started', 'readonly' => 'true']) !!}
+                    {!! Form::text('started',null,['class' => 'form-control','id' => 'seeStarted', 'readonly' => 'true']) !!}
                     <div class="input-group-addon">até</div>
-                    {!! Form::text('stopped',null,['class' => 'form-control','id' => 'stopped', 'readonly' => 'true']) !!}
+                    {!! Form::text('stopped',null,['class' => 'form-control','id' => 'seeStopped', 'readonly' => 'true']) !!}
                 </div>
             </div>
         </div>

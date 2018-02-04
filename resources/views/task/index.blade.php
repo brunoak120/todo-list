@@ -27,84 +27,83 @@
                             <div class="col-md-12">
                                 <label for="started">Filtrar por data</label>
                                 <div class="input-group input-daterange">
-                                    {!! Form::text('started',null,['class' => 'calendar form-control', 'placeholder' => 'Data inicial', 'required']) !!}
+                                    {!! Form::text('started',null,['class' => 'calendar form-control', 'placeholder' => 'Data inicial', 'id' => 'started']) !!}
                                     <div class="input-group-addon">até</div>
-                                    {!! Form::text('stopped',null,['class' => 'calendar form-control', 'placeholder' => 'Data final', 'required']) !!}
+                                    {!! Form::text('stopped',null,['class' => 'calendar form-control', 'placeholder' => 'Data final', 'id' => 'stopped']) !!}
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Filtrar por categoria</label>
-                                {!! Form::select('category_id',[null => 'Escolha uma categoria']+$categories->toArray(), null, ['class' => 'form-control', 'required']) !!}
+                                {!! Form::select('category_id',[null => 'Escolha uma categoria']+$categories->toArray(), null, ['class' => 'form-control', 'id' => 'category_id']) !!}
                             </div>
                             <div class="col-md-6">
                                 <label>Filtrar por status</label>
-                                {!! Form::select('status',[null => 'Escolha um status', '0' => 'Pendente', '1' => 'Relizada'], null, ['class' => 'form-control', 'required']) !!}
+                                {!! Form::select('status',[null => 'Escolha um status', '0' => 'Pendente', '1' => 'Relizada'], null, ['class' => 'form-control', 'id' => 'status']) !!}
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="filterFields btn btn-primary">
                                     Filtrar
                                 </button>
                             </div>
                         </div>
                         </br>
-                        <ul class="list-group">
-                            @if(count($tasks) == 0)
-                                <div class="alert alert-warning">
-                                    <h4> <strong>Nenhuma tarefa inserida nesse contexto.</strong></h4>
-                                    <ul>
-                                        @foreach($errors->all() as $error)
-                                            <li>{!! $error !!}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                            @foreach($tasks as $task)
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-md-9">
-                                                    <div class="checkbox">
-                                                        <label>
-                                                            <input class="changeStatus raitola"
-                                                                   data-status="{{ $task->status }}"
-                                                                   data-name="{{ $task->title }}"
-                                                                   data-id="{{ $task->id }}"
-                                                                   @if($task->status)
-                                                                   checked
-                                                                   @endif
-                                                                   type="checkbox">{{ $task->title }}
+                        <div class="row">
+                            <div class="mainDiv col-md-12">
+                                <ul class="list-group">
+                                    @if(count($tasks) == 0)
+                                        <div class="alert alert-warning">
+                                            <h4><strong>Nenhuma tarefa inserida nesse contexto.</strong></h4>
+                                        </div>
+                                    @endif
+                                    @foreach($tasks as $task)
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <li class="list-group-item">
+                                                    <div class="row">
+                                                        <div class="col-md-9">
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input class="changeStatus raitola"
+                                                                           data-status="{{ $task->status }}"
+                                                                           data-name="{{ $task->title }}"
+                                                                           data-id="{{ $task->id }}"
+                                                                           @if($task->status)
+                                                                           checked
+                                                                           @endif
+                                                                           type="checkbox">{{ $task->title }}
 
-                                                        </label></div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <a title="Editar" data-id="{{ $task->id }}"
-                                                       class="editItem btn btn-primary btn">
-                                                        <i class="glyphicon glyphicon-pencil"></i>
-                                                    </a>
-                                                    <a title="Remover" data-id="{{ $task->id }}"
-                                                       class="seeItem btn btn-danger btn">
-                                                        <i class="glyphicon glyphicon-search"></i>
-                                                    </a>
-                                                    <a title="Remover" data-id="{{ $task->id }}"
-                                                       class="removeItem btn btn-danger btn">
-                                                        <i class="glyphicon glyphicon-trash"></i>
-                                                    </a>
-                                                </div>
+                                                                </label></div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <a title="Editar" data-id="{{ $task->id }}"
+                                                               class="editItem btn btn-warning btn">
+                                                                <i class="glyphicon glyphicon-pencil"></i>
+                                                            </a>
+                                                            <a title="Ver" data-id="{{ $task->id }}"
+                                                               class="seeItem btn btn-primary btn">
+                                                                <i class="glyphicon glyphicon-search"></i>
+                                                            </a>
+                                                            <a title="Remover" data-id="{{ $task->id }}"
+                                                               class="removeItem btn btn-danger btn">
+                                                                <i class="glyphicon glyphicon-trash"></i>
+                                                            </a>
+                                                        </div>
 
+                                                    </div>
+                                                </li>
                                             </div>
-                                        </li>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </ul>
+                                        </div>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    @include('task._show_modal')
-                    <!-- Modal -->
+                @include('task._show_modal')
+                <!-- Modal -->
                     <div id="editCategoryModal" class="modal fade" role="dialog">
                         <div class="modal-dialog">
                             <!-- Modal content-->

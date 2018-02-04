@@ -2,27 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use App\Repositories\CategoryRepository;
 use App\Repositories\TaskRepository;
+use App\Service\TaskService;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    /** @var TaskRepository  */
+    /** @var TaskRepository */
     protected $taskRepository;
 
-    /** @var CategoryRepository  */
+    /** @var TaskService  */
+    protected $taskService;
+
+    /** @var CategoryRepository */
     protected $categoryRepository;
 
     /**
      * TaskController constructor.
      * @param TaskRepository $taskRepository
      * @param CategoryRepository $categoryRepository
+     * @param TaskService $taskService
      */
-    public function __construct(TaskRepository $taskRepository, CategoryRepository $categoryRepository)
+    public function __construct(TaskRepository $taskRepository, CategoryRepository $categoryRepository,
+                                TaskService $taskService)
     {
         $this->taskRepository = $taskRepository;
         $this->categoryRepository = $categoryRepository;
+        $this->taskService = $taskService;
     }
 
     /**
@@ -58,8 +66,24 @@ class TaskController extends Controller
             $task = $request->id;
             $shown = $this->taskRepository->findWhere(['id' => $task])->first();
 
-            if (!empty($shown->title)){
+            if (!empty($shown->title)) {
                 return response()->json($shown);
+            }
+
+            return response()->json(false);
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+            exit;
+        }
+    }
+
+    public function filter(Request $request)
+    {
+        try {
+            $result = $this->taskRepository->filterTasks($request);
+
+            if (count($result) > 0) {
+                return response()->json($result);
             }
 
             return response()->json(false);
@@ -75,7 +99,7 @@ class TaskController extends Controller
             $status = $request->status;
             $updated = $this->taskRepository->update(['status' => $status], $request->id);
 
-            if (!empty($updated->updated_at)){
+            if (!empty($updated->updated_at)) {
                 return response()->json(true);
             }
 

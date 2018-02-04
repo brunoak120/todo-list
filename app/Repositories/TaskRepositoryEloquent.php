@@ -4,6 +4,8 @@ namespace App\Repositories;
 
 use App\Criteria\FilterByUserCriteria;
 use App\Models\Task;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
 
@@ -44,6 +46,33 @@ class TaskRepositoryEloquent extends BaseRepository implements TaskRepository
         })->all();
 
         return $result;
+    }
+
+
+    public function filterTasks(Request $request)
+    {
+        $query = (new Task())->newQuery();
+
+        $query->where('user_id', auth()->user()->id);
+
+        if ($request->started != null){
+            $started = Carbon::createFromFormat('d/m/Y', $request->started);
+            $started = $started->format('Y-m-d');
+            $query->whereDate('started', '>=', $started);
+        }
+        if ($request->stopped != null){
+            $stopped = Carbon::createFromFormat('d/m/Y', $request->stopped);
+            $stopped = $stopped->format('Y-m-d');
+            $query->whereDate('stopped', '<=', $stopped);
+        }
+        if ($request->category_id != null){
+            $query->where('category_id', $request->category_id);
+        }
+        if ($request->status != null){
+            $query->where('status', $request->status);
+        }
+
+        return $query->get();
     }
 
 }

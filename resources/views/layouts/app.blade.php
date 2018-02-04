@@ -13,11 +13,15 @@
     <!-- Styles -->
     {!! Html::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') !!}
     {!! Html::style('//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css') !!}
+    {!! Html::style('css/loader.css') !!}
     {!! Html::style('css/app.css') !!}
     {!! Html::style('css/style.css') !!}
     @stack('styles')
 </head>
 <body>
+<div class="container-loader" style="display: none">
+    <div class="loader">Loading...</div>
+</div>
 <div id="app">
     @include('elements._header')
     <div class="container">
