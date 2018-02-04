@@ -29,6 +29,21 @@ Para executar a aplicação será necessário seguir os passos abaixo:
 
 A seguir será mostrado a seguencia de passos para utilizar a aplicação.
 
+## Usuário
+
+### Criando usuários
+
+ - Na página inicial, clicar em "Registrar"
+ - Preencha os campos com suas informações
+ - Clique em registrar
+ - O usuário será redirecionado para página inicial da aplicação
+ 
+### Acessando a aplicação
+
+ - Na página inicial, clicar em "Entrar"
+ - Entre com e-mail e senha e clique em entrar
+ - O usuário será redirecionado para página inicial da aplicação
+
 ## Categorias
 
 ### Criando categorias
