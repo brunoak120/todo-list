@@ -107,6 +107,10 @@ A seguir será mostrado a seguencia de passos para utilizar a aplicação.
  
  Obs: Nessa funcionalidade o usuário pode se sentir livre para selecionar os filtros como desejar.
  
+### Mudar Status da tarefa
+
+ - Dentro do menu de gerenciamento, clicar no checkbox da tarefa
+ - A tarefa será atualizada e será enviado um feedback ao usuário
  
 ## License
  
