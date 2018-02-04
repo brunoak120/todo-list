@@ -8,6 +8,7 @@
  - [Padrão de Projeto Repository](https://github.com/andersao/l5-repository)
  - [Plugin Flash Alert](https://github.com/laracasts/flash)
  - [Single Element CSS Spinners](https://github.com/lukehaas/css-loaders)
+ - [DataTables, Table plug-in for jQuery](https://datatables.net/)
 
 # Funcionalidades da aplicação
 
