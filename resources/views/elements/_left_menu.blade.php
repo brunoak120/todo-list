@@ -6,9 +6,9 @@
                 <div class="panel-body">
                     <ul class="nav nav-sidebar">
                         <li><a href="{{ route('task.index') }}">Gerenciar Tarefas</a></li>
-                        <li><a href="{{ route('category.index') }}">Listar Categorias</a></li>
-                        <li><a href="{{ route('category.create') }}">Adicionar Categorias</a></li>
                         <li><a href="{{ route('task.create') }}">Adicionar Tarefa</a></li>
+                        <li><a href="{{ route('category.create') }}">Adicionar Categorias</a></li>
+                        <li><a href="{{ route('category.index') }}">Listar Categorias</a></li>
                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Sair</a></li>
                     </ul>

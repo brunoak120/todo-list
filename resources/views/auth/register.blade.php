@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <h3 align="center">Registrar sua conta ao Todo list</h3>
             <div class="panel panel-default">
                 <div class="panel-heading">Registrar</div>
 

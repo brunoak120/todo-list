@@ -39,7 +39,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = $this->taskRepository->all();
+        $tasks = $this->taskRepository->findWhere(['user_id' => auth()->user()->id]);
         $categories = $this->categoryRepository->getArrayCategoriesOrderlyByName();
 
         return view('task.index', compact('tasks', 'categories'));

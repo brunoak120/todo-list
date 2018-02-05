@@ -36,11 +36,11 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label>Filtrar por categoria</label>
-                                {!! Form::select('category_id',[null => 'Escolha uma categoria']+$categories->toArray(), null, ['class' => 'form-control', 'id' => 'category_id']) !!}
+                                {!! Form::select('category_id',[null => 'Filtrar todas categorias']+$categories->toArray(), null, ['class' => 'form-control', 'id' => 'category_id']) !!}
                             </div>
                             <div class="col-md-6">
                                 <label>Filtrar por status</label>
-                                {!! Form::select('status',[null => 'Escolha um status', '0' => 'Pendente', '1' => 'Relizada'], null, ['class' => 'form-control', 'id' => 'status']) !!}
+                                {!! Form::select('status',[null => 'Filtrar todos status', '0' => 'Pendente', '1' => 'Relizada'], null, ['class' => 'form-control', 'id' => 'status']) !!}
                             </div>
                         </div>
                         <div class="row">

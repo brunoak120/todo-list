@@ -4,9 +4,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
+            <h3 align="center">Bem vindo ao Todo list</h3>
             <div class="panel panel-default">
                 <div class="panel-heading">Entrar</div>
-
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
@@ -54,10 +54,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     Entrar
                                 </button>
-
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Esqueceu a senha?
-                                </a>
                             </div>
                         </div>
                     </form>
