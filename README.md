@@ -20,9 +20,11 @@
 
 Para executar a aplicação será necessário seguir os passos abaixo:
 
- - Após da aplicação ser baixada, dentro do diretorio usando um bash usar o comando "composer update"
- - Criar um novo arquivo ".env" seguindo o exemplo do arquivo ".env.example"
+ - Após da aplicação ser baixada, dentro do diretorio será necessário criar um 
+ arquivo ".env" seguindo o exemplo do arquivo ".env.example"
  - Editar o aquivo ".env" criado colocando as informações da base de dados
+ - Dentro da pasta raiz do projeto executar o comando "composer update" usando a bash ou cmd
+ - Gerar a key usando o comando "php artisan key:generate"
  - Criar um banco de dados com o mesmo nome que foi usado no arquivo ".env"
  - Com a bash aberta dentro do diretorio raiz gerar as migrations com comando "php artisan migrate"
 
