@@ -6,6 +6,7 @@
  - [JQuery, AJAX](http://api.jquery.com/)
  - [SweetAlertJS](https://sweetalert.js.org/guides/#installation)
  - [Padrão de Projeto Repository](https://github.com/andersao/l5-repository)
+ - Padrão de Projeto Decorator para as buscas
  - [Plugin Flash Alert](https://github.com/laracasts/flash)
  - [Single Element CSS Spinners](https://github.com/lukehaas/css-loaders)
  - [DataTables, Table plug-in for jQuery](https://datatables.net/)
