@@ -38,5 +38,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/ver-tarefa', 'TaskController@show')->name('task.show');
     Route::delete('/remove-tarefa', 'TaskController@destroy')->name('task.destroy');
     Route::post('/filtar-tarefas', 'TaskController@filter')->name('task.filter');
+    Route::get('/filtar-tarefassss', 'TaskController@filter')->name('task.filter');
 
 });

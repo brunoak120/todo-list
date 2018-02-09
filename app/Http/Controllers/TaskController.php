@@ -7,6 +7,7 @@ use App\Models\Task;
 use App\Repositories\CategoryRepository;
 use App\Repositories\TaskRepository;
 use App\Service\TaskService;
+use App\TaskSearch\TaskSearch;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -81,7 +82,7 @@ class TaskController extends Controller
     public function filter(Request $request)
     {
         try {
-            $result = $this->taskRepository->filterTasks($request);
+            $result = TaskSearch::apply($request);
 
             if (count($result) > 0) {
                 return response()->json($result);
